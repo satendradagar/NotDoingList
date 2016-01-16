@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NotDoingItem" customModule="NotDoingList" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cni-u8-yJ1">
+                    <rect key="frame" x="56" y="17" width="406" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Not Doing Item written here" id="EJg-4k-QQI">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NU7-gH-cjn">
+                    <rect key="frame" x="20" y="13" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="iqa-B6-iMf"/>
+                        <constraint firstAttribute="width" constant="24" id="riZ-UN-ivT"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="yw3-GN-dKN"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cni-u8-yJ1" firstAttribute="leading" secondItem="NU7-gH-cjn" secondAttribute="trailing" constant="14" id="5ko-DA-Cyz"/>
+                <constraint firstItem="NU7-gH-cjn" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="13" id="C2r-8l-H5e"/>
+                <constraint firstItem="cni-u8-yJ1" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="16" id="Wcy-1d-O01"/>
+                <constraint firstAttribute="trailing" secondItem="cni-u8-yJ1" secondAttribute="trailing" constant="20" id="uCf-Qi-xQP"/>
+                <constraint firstItem="NU7-gH-cjn" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="vxc-7a-HhC"/>
+            </constraints>
+        </customView>
+        <customObject id="5Pk-yu-3sy" customClass="NotDoingItem" customModule="NotDoingList" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="cni-u8-yJ1" id="j4B-ot-18C"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="d4A-we-8Wh"/>
+            </connections>
+        </customObject>
+    </objects>
+    <resources>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+    </resources>
+</document>
