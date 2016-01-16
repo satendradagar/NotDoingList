@@ -16,6 +16,7 @@
 		D1C4226F1C49FB8000284429 /* NotDoingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C4226D1C49FB8000284429 /* NotDoingItem.swift */; };
 		D1C422701C49FB8000284429 /* NotDoingItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C4226E1C49FB8000284429 /* NotDoingItem.xib */; };
 		D1C422721C49FDA900284429 /* NotDoingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C422711C49FDA900284429 /* NotDoingFlowLayout.swift */; };
+		D1C422741C4A038E00284429 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C422731C4A038E00284429 /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D1C4226D1C49FB8000284429 /* NotDoingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotDoingItem.swift; path = CollectionView/NotDoingItem.swift; sourceTree = "<group>"; };
 		D1C4226E1C49FB8000284429 /* NotDoingItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotDoingItem.xib; path = CollectionView/NotDoingItem.xib; sourceTree = "<group>"; };
 		D1C422711C49FDA900284429 /* NotDoingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotDoingFlowLayout.swift; path = CollectionView/NotDoingFlowLayout.swift; sourceTree = "<group>"; };
+		D1C422731C4A038E00284429 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				D1C422451C49FB0200284429 /* Assets.xcassets */,
 				D1C422471C49FB0200284429 /* Main.storyboard */,
 				D1C4224A1C49FB0200284429 /* Info.plist */,
+				D1C422731C4A038E00284429 /* WindowController.swift */,
 			);
 			path = NotDoingList;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C422441C49FB0200284429 /* ViewController.swift in Sources */,
+				D1C422741C4A038E00284429 /* WindowController.swift in Sources */,
 				D1C4226F1C49FB8000284429 /* NotDoingItem.swift in Sources */,
 				D1C422421C49FB0200284429 /* AppDelegate.swift in Sources */,
 				D1C422721C49FDA900284429 /* NotDoingFlowLayout.swift in Sources */,
