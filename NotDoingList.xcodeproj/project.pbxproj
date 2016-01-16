@@ -15,6 +15,7 @@
 		D1C4225F1C49FB0200284429 /* NotDoingListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C4225E1C49FB0200284429 /* NotDoingListUITests.swift */; };
 		D1C4226F1C49FB8000284429 /* NotDoingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C4226D1C49FB8000284429 /* NotDoingItem.swift */; };
 		D1C422701C49FB8000284429 /* NotDoingItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C4226E1C49FB8000284429 /* NotDoingItem.xib */; };
+		D1C422721C49FDA900284429 /* NotDoingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C422711C49FDA900284429 /* NotDoingFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D1C422601C49FB0200284429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C4226D1C49FB8000284429 /* NotDoingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotDoingItem.swift; path = CollectionView/NotDoingItem.swift; sourceTree = "<group>"; };
 		D1C4226E1C49FB8000284429 /* NotDoingItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotDoingItem.xib; path = CollectionView/NotDoingItem.xib; sourceTree = "<group>"; };
+		D1C422711C49FDA900284429 /* NotDoingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotDoingFlowLayout.swift; path = CollectionView/NotDoingFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				D1C4226D1C49FB8000284429 /* NotDoingItem.swift */,
 				D1C4226E1C49FB8000284429 /* NotDoingItem.xib */,
+				D1C422711C49FDA900284429 /* NotDoingFlowLayout.swift */,
 			);
 			name = CollectionView;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				D1C422441C49FB0200284429 /* ViewController.swift in Sources */,
 				D1C4226F1C49FB8000284429 /* NotDoingItem.swift in Sources */,
 				D1C422421C49FB0200284429 /* AppDelegate.swift in Sources */,
+				D1C422721C49FDA900284429 /* NotDoingFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

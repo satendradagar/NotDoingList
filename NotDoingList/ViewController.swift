@@ -16,6 +16,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        collectionView.backgroundColors = [NSColor.grayColor()]
     }
 
 }
@@ -39,6 +40,10 @@ extension ViewController: NSCollectionViewDataSource {
 }
 
 extension ViewController: NSCollectionViewDelegate {
+    
+    func collectionView(collectionView: NSCollectionView, didSelectItemsAtIndexPaths indexPaths: Set<NSIndexPath>) {
+        print(indexPaths)
+    }
     
 }
 
