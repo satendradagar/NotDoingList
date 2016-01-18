@@ -702,7 +702,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAI-BW-zgN">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="sAI-BW-zgN" customClass="ScrollViewWithHeader" customModule="NotDoingList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <clipView key="contentView" id="v7S-ol-oA3">
                                     <rect key="frame" x="1" y="1" width="478" height="268"/>
@@ -721,13 +721,15 @@
                                             </connections>
                                         </collectionView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </clipView>
+                                <edgeInsets key="contentInsets" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="zvx-AV-8jA">
                                     <rect key="frame" x="1" y="144" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="kzl-hA-Xph">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="463" y="80" width="16" height="189"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -740,6 +742,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionScrollView" destination="sAI-BW-zgN" id="fuR-24-h8h"/>
                         <outlet property="collectionView" destination="xgb-t5-pcM" id="dLB-uV-oKx"/>
                     </connections>
                 </viewController>

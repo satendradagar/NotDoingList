@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4CFD18D1C4D1793009AAA4A /* ScrollViewWithHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD18C1C4D1793009AAA4A /* ScrollViewWithHeader.swift */; };
 		D1C422421C49FB0200284429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C422411C49FB0200284429 /* AppDelegate.swift */; };
 		D1C422441C49FB0200284429 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C422431C49FB0200284429 /* ViewController.swift */; };
 		D1C422461C49FB0200284429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C422451C49FB0200284429 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4CFD18C1C4D1793009AAA4A /* ScrollViewWithHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewWithHeader.swift; sourceTree = "<group>"; };
 		D1C4223E1C49FB0200284429 /* NotDoingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotDoingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C422411C49FB0200284429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C422431C49FB0200284429 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				D1C4226C1C49FB5600284429 /* CollectionView */,
 				D1C422411C49FB0200284429 /* AppDelegate.swift */,
 				D1C422431C49FB0200284429 /* ViewController.swift */,
+				C4CFD18C1C4D1793009AAA4A /* ScrollViewWithHeader.swift */,
 				D1C422451C49FB0200284429 /* Assets.xcassets */,
 				D1C422471C49FB0200284429 /* Main.storyboard */,
 				D1C4224A1C49FB0200284429 /* Info.plist */,
@@ -275,6 +278,7 @@
 			files = (
 				D1C422441C49FB0200284429 /* ViewController.swift in Sources */,
 				D1C422741C4A038E00284429 /* WindowController.swift in Sources */,
+				C4CFD18D1C4D1793009AAA4A /* ScrollViewWithHeader.swift in Sources */,
 				D1C4226F1C49FB8000284429 /* NotDoingItem.swift in Sources */,
 				D1C422421C49FB0200284429 /* AppDelegate.swift in Sources */,
 				D1C422721C49FDA900284429 /* NotDoingFlowLayout.swift in Sources */,
@@ -499,6 +503,7 @@
 				D1C422651C49FB0200284429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1C422661C49FB0200284429 /* Build configuration list for PBXNativeTarget "NotDoingListTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +512,7 @@
 				D1C422681C49FB0200284429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1C422691C49FB0200284429 /* Build configuration list for PBXNativeTarget "NotDoingListUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +521,7 @@
 				D1C4226B1C49FB0200284429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

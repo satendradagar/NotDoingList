@@ -11,12 +11,17 @@ import Cocoa
 class ViewController: NSViewController {
 
     @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var collectionScrollView: NSScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        collectionView.backgroundColors = [NSColor.grayColor()]
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.redColor().CGColor
+        collectionScrollView.verticalScrollElasticity = NSScrollElasticity.init(rawValue: 2)!
+//        collectionScrollView.contentInsets = NSEdgeInsetsMake(100, 0, 0, 0);
+        collectionView.backgroundColors = [NSColor.clearColor()]
     }
     
     func addItem() {
