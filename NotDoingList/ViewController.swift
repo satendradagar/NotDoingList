@@ -20,6 +20,8 @@ class ViewController: NSViewController {
         self.view.wantsLayer = true
         self.view.layer?.backgroundColor = NSColor.redColor().CGColor
         collectionScrollView.verticalScrollElasticity = NSScrollElasticity.init(rawValue: 2)!
+        collectionScrollView.hasVerticalScroller = false
+
 //        collectionScrollView.contentInsets = NSEdgeInsetsMake(100, 0, 0, 0);
         collectionView.backgroundColors = [NSColor.clearColor()]
     }
