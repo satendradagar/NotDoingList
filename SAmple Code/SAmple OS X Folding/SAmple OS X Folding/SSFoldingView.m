@@ -9,6 +9,8 @@
 #import "SSFoldingView.h"
 #import <QuartzCore/CoreAnimation.h>
 
+#define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
+#define degreesToRadians(degrees) ((degrees)/180.0*M_PI)
 @implementation SSFoldingView
 {
     CALayer *subLayer;
@@ -45,7 +47,7 @@
 //    self.layer.backgroundColor = [NSColor yellowColor].CGColor;
 
     [self initialize];
-    [self horizontalFoldWithHeight:70 andForce:YES];
+    [self horizontalFoldWithHeight:20 andForce:YES];
     imgView.image = nil;
 //    [self configurePerspectiveAnimation];
 }
@@ -61,7 +63,7 @@
 //
 //    //Transform matrix to be used for camera animation
 //    t = CATransform3DMakeRotation(1, 0, 1, 0);
-//    
+//
 //    //Animate the camera panning left and right continuously
 //    CABasicAnimation *animation = [CABasicAnimation animation];
 //    animation.fromValue = [NSValue valueWithCATransform3D: CATransform3DIdentity];
@@ -176,12 +178,13 @@
     lr.transform = mt;
 
 }
+
 -(void) initialize{
     if (!_main3DLayer){
         NSImage *viewSnapShot = [self snapshot];
-        
+        viewSnapShot = [NSImage imageNamed:@"Front.JPG"];
         CATransform3D transform = CATransform3DIdentity;
-        transform.m34 = -1.0/700.0;
+        transform.m34 = -1.0/300.0;
         _main3DLayer = [CALayer layer] ;
         _main3DLayer.frame = self.bounds;
         _main3DLayer.backgroundColor = [NSColor colorWithWhite:0.2 alpha:0.0].CGColor;
@@ -217,7 +220,7 @@
             CAGradientLayer *shadowLayer = [CAGradientLayer layer];
             shadowLayer.frame = imageCroppedLayer.bounds;
             shadowLayer.opacity = 0;
-            shadowLayer.colors = [NSArray arrayWithObjects:(id)[NSColor blackColor].CGColor, (id)[NSColor clearColor].CGColor, nil];
+            shadowLayer.colors = [NSArray arrayWithObjects:(id)[NSColor grayColor].CGColor, (id)[NSColor blackColor].CGColor, nil];
             
             
             if (i%2) {
@@ -262,6 +265,34 @@
     
 }
 
+-(void) horizontalFoldWithDegreeAngle:(CGFloat)angle andForce:(BOOL)force{
+    [self initialize];
+    
+//    if (height+10>=_initialSizeView.height)height=_initialSizeView.height;
+    
+    
+//    if (_currentSize.height!=height || force){
+//        _currentSize.height=height;
+        if (_currentSize.height<=_initialSizeView.height){
+            
+            for (int i=0;i<[_layerFolds count];i++){
+                [self setPropertyToLayer:[_layerFolds objectAtIndex:i] withShadow:[_shadowLayerFolds objectAtIndex:i]
+                              withAngle:angle
+                                   ofIdx:i];
+            }
+        }
+}
+
+-(void) setPropertyToLayer:(CALayer*)layer withShadow:(CALayer*)shadow withAngle:(CGFloat)angle ofIdx:(NSInteger)idx{
+
+    CGFloat angle2 = degreesToRadians(angle);
+    CATransform3D transform=CATransform3DIdentity;
+    transform=CATransform3DRotate(transform, angle2, 1.0, 0.0, 0);
+    layer.transform=transform;
+    [_main3DLayer setHidden:NO];
+    [self.layer setNeedsDisplay];
+
+}
 
 -(void) setPropertyToLayer:(CALayer*)layer withShadow:(CALayer*)shadow withHeight:(CGFloat)height ofIdx:(NSInteger)idx{
     float heightPartCurr=height/_numberOfFolds;
@@ -272,15 +303,15 @@
     CGPoint posCurr=layer.position;
     
     
-
     if (idx<([_layerFolds count]-1)){
         posCurr.y=heightPartCurr*idx+(_initialSizeView.height-_currentSize.height);
         if (layer.anchorPoint.y==1.0)posCurr.y+=heightPartCurr;
     }
-    
+//    NSLog(@"layer position[%ld] =  %@",(long)idx,NSStringFromPoint(NSPointFromCGPoint(posCurr)));
     layer.position=posCurr;
     
     float angle2=acos(heightPartCurr/heightPartInitial);
+//    NSLog(@"IDX,Angle:[%ld,%f]",(long)idx,RADIANS_TO_DEGREES(angle2));
     if (idx%2==0)angle2=angle2*-1;
     CATransform3D transform=CATransform3DIdentity;
     transform=CATransform3DRotate(transform, angle2, 1.0, 0.0, 0);
@@ -297,7 +328,7 @@
     BOOL opened=NO;
     BOOL closed=NO;
     
-    
+    NSLog(@"%@",NSStringFromPoint(point));
     if (1){
         float height=0;
         

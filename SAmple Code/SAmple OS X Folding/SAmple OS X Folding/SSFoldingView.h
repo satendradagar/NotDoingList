@@ -27,4 +27,6 @@
 
 -(void) setEndPointPosition:(CGPoint)point;
 
+-(void) horizontalFoldWithDegreeAngle:(CGFloat)angle andForce:(BOOL)force;
+
 @end

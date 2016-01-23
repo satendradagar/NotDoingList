@@ -21,14 +21,24 @@ class ViewController: NSViewController {
         self.view.layer?.backgroundColor = NSColor.redColor().CGColor
         collectionScrollView.verticalScrollElasticity = NSScrollElasticity.init(rawValue: 2)!
         collectionScrollView.hasVerticalScroller = false
-
+        
 //        collectionScrollView.contentInsets = NSEdgeInsetsMake(100, 0, 0, 0);
         collectionView.backgroundColors = [NSColor.clearColor()]
+        let panGesture :NSPanGestureRecognizer = NSPanGestureRecognizer.init(target: self, action: Selector.init("recognizerDidFire:"))
+        self.view.addGestureRecognizer(panGesture)
+
     }
     
     func addItem() {
         // Add Item
     }
+
+    @IBAction func recognizerDidFire(sender: NSPanGestureRecognizer) {
+        
+        Swift.print("Transition:\(sender.translationInView(self.view))")
+        
+    }
+    
 
 }
 
