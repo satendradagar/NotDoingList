@@ -701,7 +701,8 @@
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="2" minimumLineSpacing="2" id="vld-pP-1yQ">
                                         <size key="itemSize" width="604" height="50"/>
                                     </collectionViewFlowLayout>
-                                    <color key="primaryBackgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="primaryBackgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="secondaryBackgroundColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                 </collectionView>
                             </subviews>
                             <color key="backgroundColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

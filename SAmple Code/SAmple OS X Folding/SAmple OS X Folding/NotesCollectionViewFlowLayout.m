@@ -7,6 +7,7 @@
 //
 
 #import "NotesCollectionViewFlowLayout.h"
+#import "SACollectionViewItem.h"
 
 @implementation NotesCollectionViewFlowLayout
 
@@ -42,10 +43,23 @@
     
     NSUInteger itemIndex = [indexPath item];
     CGFloat angleInRadians = ((CGFloat)itemIndex / (CGFloat)count) * (2.0 * M_PI);
-    NSPoint subviewCenter = NSMakePoint(0, itemIndex * 80);
+    NSPoint subviewCenter = NSMakePoint(0, 0);
+
+    if (itemIndex) {
+        
+        NSCollectionViewItem *item = [self.collectionView itemAtIndex:itemIndex-1];
+        CGFloat heightSum = 0;
+        for (int i = 0; i < itemIndex; i++) {
+            CollectionItemModel *itemModel = [self.list objectAtIndex:i];
+            heightSum += itemModel.cellHeight;
+        }
+        subviewCenter = item.view.frame.origin;
+        subviewCenter.y = heightSum;
+    }
+    CollectionItemModel *itemModel = [self.list objectAtIndex:itemIndex];
+
 //    subviewCenter.x = circleCenter.x + circleRadius * cos(angleInRadians);
 //    subviewCenter.y = circleCenter.y + circleRadius * sin(angleInRadians);
-    CollectionItemModel *itemModel = [self.list objectAtIndex:itemIndex];
     NSRect itemFrame = NSMakeRect(subviewCenter.x , subviewCenter.y , self.collectionView.frame.size.width, itemModel.cellHeight);
     
     NSCollectionViewLayoutAttributes *attributes = [[[self class] layoutAttributesClass] layoutAttributesForItemWithIndexPath:indexPath];

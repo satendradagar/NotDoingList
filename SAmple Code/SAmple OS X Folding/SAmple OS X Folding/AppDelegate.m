@@ -122,12 +122,15 @@
     
     SACollectionViewItem *item = (SACollectionViewItem *)[collectionView itemAtIndex:[indexPaths.allObjects firstObject].item];
     [item setNewPoint];
-    NSRect frame = item.view.frame;
-    frame.size.height = 80;
+//    NSRect frame = item.view.frame;
+//    frame.size.height = 80;
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:1.0];
-    [item.view.animator setFrame:frame];
+//    [item.view.animator setFrame:frame];
+    [self.collectionView.animator deleteItemsAtIndexPaths:indexPaths];
+    [self.collectionView.animator insertItemsAtIndexPaths:indexPaths];
     [NSAnimationContext endGrouping];
+    [self.collectionView.collectionViewLayout invalidateLayout];
 
 //    [NSAnimationContext beginGrouping];
 //    [[NSAnimationContext currentContext] setDuration:2.0];
@@ -140,7 +143,6 @@
 //    [self.collectionView.animator.collectionViewLayout invalidateLayout];
 
 //    } else {
-        [self.collectionView.collectionViewLayout invalidateLayout];
 //    }
 
     

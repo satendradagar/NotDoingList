@@ -35,6 +35,7 @@
     NSLog(@"origin:%@",NSStringFromPoint(self.foldingLayer.frame.origin));
     
     [(SSFoldingView *)self.foldingLayer setEndPointPosition: origin];
+        self.foldingLayer.layer.borderColor = [NSColor yellowColor].CGColor;
 
 }
 
