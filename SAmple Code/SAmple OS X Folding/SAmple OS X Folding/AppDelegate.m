@@ -97,12 +97,13 @@
     // Message back to the collectionView, asking it to make a @"Slide" item associated with the given item indexPath.  The collectionView will first check whether an NSNib or item Class has been registered with that name (via -registerNib:forItemWithIdentifier: or -registerClass:forItemWithIdentifier:).  Failing that, the collectionView will search for a .nib file named "Slide".  Since our .nib file is named "Slide.nib", no registration is necessary.
     SACollectionViewItem *item = [collectionView makeItemWithIdentifier:@"SACollectionViewItem" forIndexPath:indexPath];
 //    item.textField.stringValue = [_list objectAtIndex:indexPath.item];
-//    CollectionItemModel *itemModel = [_list objectAtIndex:indexPath.item];
+    CollectionItemModel *itemModel = [_list objectAtIndex:indexPath.item];
 //    if (itemModel.state) {
-//        
-//        [item setNewPoint];
-//        
+    
+        [item confighureViewWithModel:itemModel];
+        
 //    }
+    
     item.textField.stringValue = @"";
 
     return item;
@@ -164,7 +165,7 @@
 {
     CollectionItemModel *modelItem = [CollectionItemModel new];
     modelItem.state = 0;
-    modelItem.cellHeight = 30;
+    modelItem.cellHeight = 25;
     modelItem.message = msg;
     return modelItem;
 }

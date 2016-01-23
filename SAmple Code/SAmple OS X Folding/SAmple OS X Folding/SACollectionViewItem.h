@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SSFoldingView.h"
+#import "AppDelegate.h"
 
 @interface SACollectionViewItem : NSCollectionViewItem
 
 @property (nonatomic, weak) IBOutlet SSFoldingView *foldingLayer;
+-(void) confighureViewWithModel:(CollectionItemModel *) modelObject;
+
 -(void) unfoldViewItem;
 
 @end

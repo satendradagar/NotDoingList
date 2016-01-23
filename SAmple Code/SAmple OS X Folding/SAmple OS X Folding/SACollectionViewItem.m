@@ -26,6 +26,21 @@
     // Do view setup here.
 }
 
+-(void) confighureViewWithModel:(CollectionItemModel *) modelObject
+{
+    if (modelObject.state) {
+        [self unfoldViewItem];
+    }
+    else{
+        NSPoint origin = self.foldingLayer.frame.origin;
+        origin.y +=60;
+//        NSLog(@"origin:%@",NSStringFromPoint(self.foldingLayer.frame.origin));
+        
+        [(SSFoldingView *)self.foldingLayer setEndPointPosition: origin];
+
+    }
+}
+
 -(void)viewDidAppear{
     [super viewDidAppear];
 
@@ -54,10 +69,10 @@
 
     
 }
-
-- (id) animationForKey:(NSString *) key
-{
-    return nil;
-}
+//
+//- (id) animationForKey:(NSString *) key
+//{
+//    return nil;
+//}
 
 @end
