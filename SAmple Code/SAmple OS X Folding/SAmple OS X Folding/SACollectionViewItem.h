@@ -12,6 +12,6 @@
 @interface SACollectionViewItem : NSCollectionViewItem
 
 @property (nonatomic, weak) IBOutlet SSFoldingView *foldingLayer;
--(void) setNewPoint;
+-(void) unfoldViewItem;
 
 @end

@@ -121,7 +121,7 @@
     itemModel.state = 1;
     
     SACollectionViewItem *item = (SACollectionViewItem *)[collectionView itemAtIndex:[indexPaths.allObjects firstObject].item];
-    [item setNewPoint];
+    [item unfoldViewItem];
 //    NSRect frame = item.view.frame;
 //    frame.size.height = 80;
     [NSAnimationContext beginGrouping];

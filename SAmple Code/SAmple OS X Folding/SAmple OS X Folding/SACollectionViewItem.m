@@ -39,7 +39,7 @@
 
 }
 
--(void) setNewPoint{
+-(void) unfoldViewItem{
     
 //    [(SSFoldingView *)self.view horizontalFoldWithDegreeAngle:90 andForce:NO];
     NSPoint origin = self.foldingLayer.frame.origin;
