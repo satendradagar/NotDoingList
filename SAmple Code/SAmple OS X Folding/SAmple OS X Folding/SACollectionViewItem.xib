@@ -8,7 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SACollectionViewItem">
             <connections>
                 <outlet property="foldingLayer" destination="YNU-RS-iz7" id="oXS-9M-RXW"/>
-                <outlet property="textField" destination="ITV-EQ-IS7" id="N4x-Jw-V9Y"/>
+                <outlet property="textField" destination="dRz-Vi-Hfn" id="buz-zs-mr7"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -21,18 +21,16 @@
                 <customView id="YNU-RS-iz7" customClass="SSFoldingView">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                    <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ITV-EQ-IS7">
-                            <rect key="frame" x="89" y="25" width="301" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label dsdsadwaSQWDEWV" id="LZA-AQ-lds">
-                                <font key="font" metaFont="system" size="24"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                    </subviews>
                 </customView>
+                <textField verticalHuggingPriority="750" id="dRz-Vi-Hfn">
+                    <rect key="frame" x="26" y="6" width="429" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" placeholderString="Type New Note" id="3gf-c9-sx4">
+                        <font key="font" metaFont="system" size="24"/>
+                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <point key="canvasLocation" x="266" y="136"/>
         </customView>

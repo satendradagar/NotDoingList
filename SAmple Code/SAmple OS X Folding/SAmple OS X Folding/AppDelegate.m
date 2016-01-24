@@ -96,15 +96,16 @@
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath {
     // Message back to the collectionView, asking it to make a @"Slide" item associated with the given item indexPath.  The collectionView will first check whether an NSNib or item Class has been registered with that name (via -registerNib:forItemWithIdentifier: or -registerClass:forItemWithIdentifier:).  Failing that, the collectionView will search for a .nib file named "Slide".  Since our .nib file is named "Slide.nib", no registration is necessary.
     SACollectionViewItem *item = [collectionView makeItemWithIdentifier:@"SACollectionViewItem" forIndexPath:indexPath];
-//    item.textField.stringValue = [_list objectAtIndex:indexPath.item];
     CollectionItemModel *itemModel = [_list objectAtIndex:indexPath.item];
+    item.textField.stringValue = itemModel.message;
+
 //    if (itemModel.state) {
     
         [item confighureViewWithModel:itemModel];
         
 //    }
     
-    item.textField.stringValue = @"";
+//    item.textField.stringValue = @"";
 
     return item;
 }
@@ -122,16 +123,20 @@
     itemModel.state = 1;
     
     SACollectionViewItem *item = (SACollectionViewItem *)[collectionView itemAtIndex:[indexPaths.allObjects firstObject].item];
-    [item unfoldViewItem];
 //    NSRect frame = item.view.frame;
 //    frame.size.height = 80;
+    [item unfoldViewItem];
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:1.0];
 //    [item.view.animator setFrame:frame];
+
     [self.collectionView.animator deleteItemsAtIndexPaths:indexPaths];
     [self.collectionView.animator insertItemsAtIndexPaths:indexPaths];
+
     [NSAnimationContext endGrouping];
+    [item performSelector:@selector(confighureViewWithModel:) withObject:itemModel afterDelay:1.0];
     [self.collectionView.collectionViewLayout invalidateLayout];
+//    [item confighureViewWithModel:itemModel];
 
 //    [NSAnimationContext beginGrouping];
 //    [[NSAnimationContext currentContext] setDuration:2.0];
@@ -149,10 +154,30 @@
     
 }
 
+-(IBAction)changeFlowLayout:(id)sender{
+    
+    NotesCollectionViewFlowLayout *circularLayout = [[NotesCollectionViewFlowLayout alloc] init];
+    circularLayout.list = self.list;
+//    if (NSAnimationContext.currentContext.duration > 0.0) {
+        NSAnimationContext.currentContext.duration = 1.0;
+        self.collectionView.animator.collectionViewLayout = circularLayout;
+//    } else {
+//        self.collectionView.animator.collectionViewLayout = circularLayout;
+//    }
+
+}
+
 -(IBAction)insertNewItemInCollection:(id)sender{
 
-    [_list addObject:[CollectionItemModel itemInstance:@"Hello 10"]];
-    [self.collectionView insertItemsAtIndexPaths:[NSSet setWithObject:[NSIndexPath indexPathForItem:_list.count-1 inSection:0]]];
+    CollectionItemModel *modelItem = [CollectionItemModel itemInstance:@""];
+    modelItem.state = 0;
+    modelItem.cellHeight = 21;
+    [_list insertObject:modelItem atIndex:3];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:1.0];
+    [self.collectionView.animator insertItemsAtIndexPaths:[NSSet setWithObject:[NSIndexPath indexPathForItem:3 inSection:0]]];
+    [NSAnimationContext endGrouping];
+
 }
 
 
@@ -164,8 +189,8 @@
 +(instancetype )itemInstance:(NSString *)msg
 {
     CollectionItemModel *modelItem = [CollectionItemModel new];
-    modelItem.state = 0;
-    modelItem.cellHeight = 25;
+    modelItem.state = 1;
+    modelItem.cellHeight = 80;
     modelItem.message = msg;
     return modelItem;
 }

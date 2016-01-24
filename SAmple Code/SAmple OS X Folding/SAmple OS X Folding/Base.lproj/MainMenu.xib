@@ -691,9 +691,9 @@
                         </connections>
                     </customView>
                     <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1G-X0-5UH">
-                        <rect key="frame" x="25" y="20" width="604" height="301"/>
+                        <rect key="frame" x="25" y="20" width="490" height="301"/>
                         <clipView key="contentView" ambiguous="YES" id="ZSm-FG-6Wk">
-                            <rect key="frame" x="0.0" y="0.0" width="604" height="301"/>
+                            <rect key="frame" x="0.0" y="0.0" width="490" height="301"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <collectionView ambiguous="YES" selectable="YES" id="SBL-X1-ben">
@@ -716,6 +716,26 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awg-I3-prO">
+                        <rect key="frame" x="119" y="398" width="152" height="32"/>
+                        <buttonCell key="cell" type="push" title="Change Layout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QyU-1y-fBd">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeFlowLayout:" target="Voe-Tx-rLC" id="5JF-Ki-nSG"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9I-GJ-Zeq">
+                        <rect key="frame" x="510" y="406" width="142" height="32"/>
+                        <buttonCell key="cell" type="push" title="Add New" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kdh-l0-ZYR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="insertNewItemInCollection:" target="Voe-Tx-rLC" id="oXs-m5-n2N"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <gestureRecognizers>
                     <panGestureRecognizer delaysPrimaryMouseButtonEvents="YES" id="fTF-TK-jF1">
@@ -725,7 +745,7 @@
                     </panGestureRecognizer>
                 </gestureRecognizers>
             </view>
-            <point key="canvasLocation" x="310" y="352"/>
+            <point key="canvasLocation" x="181" y="234"/>
         </window>
     </objects>
     <resources>

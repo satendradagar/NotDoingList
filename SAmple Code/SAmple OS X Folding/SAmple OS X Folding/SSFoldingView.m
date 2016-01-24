@@ -23,6 +23,11 @@
     // Drawing code here.
 }
 
+- (CALayer*)main3DLayer{
+
+    return _main3DLayer;
+}
+
 -(void)awakeFromNib
 {
     //Create a sublayer
@@ -181,8 +186,9 @@
 
 -(void) initialize{
     if (!_main3DLayer){
+        self.layer.backgroundColor = [NSColor greenColor].CGColor;
         NSImage *viewSnapShot = [self snapshot];
-        viewSnapShot = [NSImage imageNamed:@"Front.JPG"];
+//        viewSnapShot = [NSImage imageNamed:@"Front.JPG"];
         CATransform3D transform = CATransform3DIdentity;
         transform.m34 = -1.0/300.0;
         _main3DLayer = [CALayer layer] ;
@@ -220,7 +226,7 @@
             CAGradientLayer *shadowLayer = [CAGradientLayer layer];
             shadowLayer.frame = imageCroppedLayer.bounds;
             shadowLayer.opacity = 0;
-            shadowLayer.colors = [NSArray arrayWithObjects:(id)[NSColor grayColor].CGColor, (id)[NSColor blackColor].CGColor, nil];
+            shadowLayer.colors = [NSArray arrayWithObjects:(id)[NSColor grayColor].CGColor, (id)[NSColor whiteColor].CGColor, nil];
             
             
             if (i%2) {

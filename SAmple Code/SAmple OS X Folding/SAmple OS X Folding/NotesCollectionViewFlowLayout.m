@@ -26,11 +26,13 @@
     NSInteger itemCount = [[self collectionView] numberOfItemsInSection:0];
     NSMutableArray *layoutAttributesArray = [NSMutableArray arrayWithCapacity:itemCount];
     for (NSInteger index = 0; index < itemCount; index++) {
+        
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
         NSCollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForItemAtIndexPath:indexPath];
         if (layoutAttributes) {
             [layoutAttributesArray addObject:layoutAttributes];
         }
+        
     }
     return layoutAttributesArray;
 }
@@ -51,13 +53,19 @@
         CGFloat heightSum = 0;
         for (int i = 0; i < itemIndex; i++) {
             CollectionItemModel *itemModel = [self.list objectAtIndex:i];
-            heightSum += itemModel.cellHeight;
+            if (itemModel.state) { // for one only
+                
+                heightSum += itemModel.cellHeight;
+
+            }
         }
         subviewCenter = item.view.frame.origin;
         subviewCenter.y = heightSum;
     }
     CollectionItemModel *itemModel = [self.list objectAtIndex:itemIndex];
-
+    if (0==itemModel.state) {
+        subviewCenter.y -= 10.5;//stack over the view
+    }
 //    subviewCenter.x = circleCenter.x + circleRadius * cos(angleInRadians);
 //    subviewCenter.y = circleCenter.y + circleRadius * sin(angleInRadians);
     NSRect itemFrame = NSMakeRect(subviewCenter.x , subviewCenter.y , self.collectionView.frame.size.width, itemModel.cellHeight);

@@ -29,4 +29,6 @@
 
 -(void) horizontalFoldWithDegreeAngle:(CGFloat)angle andForce:(BOOL)force;
 
+- (CALayer*)main3DLayer;
+
 @end
