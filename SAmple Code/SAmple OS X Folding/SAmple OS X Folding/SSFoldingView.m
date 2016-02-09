@@ -226,7 +226,7 @@
             CAGradientLayer *shadowLayer = [CAGradientLayer layer];
             shadowLayer.frame = imageCroppedLayer.bounds;
             shadowLayer.opacity = 0;
-            shadowLayer.colors = [NSArray arrayWithObjects:(id)[NSColor grayColor].CGColor, (id)[NSColor whiteColor].CGColor, nil];
+            shadowLayer.colors = [NSArray arrayWithObjects:(id)[NSColor yellowColor].CGColor, (id)[NSColor yellowColor].CGColor, nil];
             
             
             if (i%2) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C437EC4A1C5635BA00D53839 /* SSTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = C437EC491C5635BA00D53839 /* SSTextFiled.m */; };
 		C4905E7F1C51269A007B3C49 /* SACollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C4905E7D1C51269A007B3C49 /* SACollectionViewItem.m */; };
 		C4905E801C51269A007B3C49 /* SACollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4905E7E1C51269A007B3C49 /* SACollectionViewItem.xib */; };
 		C492655E1C528B3D00D424AC /* NotesCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C492655D1C528B3D00D424AC /* NotesCollectionViewFlowLayout.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C437EC481C5635BA00D53839 /* SSTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTextFiled.h; sourceTree = "<group>"; };
+		C437EC491C5635BA00D53839 /* SSTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTextFiled.m; sourceTree = "<group>"; };
 		C4905E7C1C51269A007B3C49 /* SACollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACollectionViewItem.h; sourceTree = "<group>"; };
 		C4905E7D1C51269A007B3C49 /* SACollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACollectionViewItem.m; sourceTree = "<group>"; };
 		C4905E7E1C51269A007B3C49 /* SACollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SACollectionViewItem.xib; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				C4C445481C4B4F290038A2E5 /* AppDelegate.m */,
 				C4C445581C4B4FE40038A2E5 /* SSFoldingView.h */,
 				C4C445591C4B4FE40038A2E5 /* SSFoldingView.m */,
+				C437EC481C5635BA00D53839 /* SSTextFiled.h */,
+				C437EC491C5635BA00D53839 /* SSTextFiled.m */,
 				C4C4454D1C4B4F290038A2E5 /* Assets.xcassets */,
 				C4C4454F1C4B4F290038A2E5 /* MainMenu.xib */,
 				C4C445521C4B4F290038A2E5 /* Info.plist */,
@@ -166,6 +171,7 @@
 				C4C4455A1C4B4FE40038A2E5 /* SSFoldingView.m in Sources */,
 				C4C4454C1C4B4F290038A2E5 /* main.m in Sources */,
 				C4C445491C4B4F290038A2E5 /* AppDelegate.m in Sources */,
+				C437EC4A1C5635BA00D53839 /* SSTextFiled.m in Sources */,
 				C492655E1C528B3D00D424AC /* NotesCollectionViewFlowLayout.m in Sources */,
 				C4905E7F1C51269A007B3C49 /* SACollectionViewItem.m in Sources */,
 			);

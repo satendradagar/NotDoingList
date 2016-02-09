@@ -745,7 +745,7 @@
                     </panGestureRecognizer>
                 </gestureRecognizers>
             </view>
-            <point key="canvasLocation" x="181" y="234"/>
+            <point key="canvasLocation" x="317" y="158"/>
         </window>
     </objects>
     <resources>

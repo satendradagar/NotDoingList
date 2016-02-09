@@ -130,8 +130,8 @@
     [[NSAnimationContext currentContext] setDuration:1.0];
 //    [item.view.animator setFrame:frame];
 
-    [self.collectionView.animator deleteItemsAtIndexPaths:indexPaths];
-    [self.collectionView.animator insertItemsAtIndexPaths:indexPaths];
+//    [self.collectionView.animator deleteItemsAtIndexPaths:indexPaths];
+//    [self.collectionView.animator insertItemsAtIndexPaths:indexPaths];
 
     [NSAnimationContext endGrouping];
     [item performSelector:@selector(confighureViewWithModel:) withObject:itemModel afterDelay:1.0];
@@ -172,10 +172,10 @@
     CollectionItemModel *modelItem = [CollectionItemModel itemInstance:@""];
     modelItem.state = 0;
     modelItem.cellHeight = 21;
-    [_list insertObject:modelItem atIndex:3];
+    [_list insertObject:modelItem atIndex:1];
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:1.0];
-    [self.collectionView.animator insertItemsAtIndexPaths:[NSSet setWithObject:[NSIndexPath indexPathForItem:3 inSection:0]]];
+    [self.collectionView.animator insertItemsAtIndexPaths:[NSSet setWithObject:[NSIndexPath indexPathForItem:1 inSection:0]]];
     [NSAnimationContext endGrouping];
 
 }

@@ -78,7 +78,7 @@
     NSPoint origin = self.foldingLayer.frame.origin;
     origin.y +=0;
     NSLog(@"origin:%@",NSStringFromPoint(self.foldingLayer.frame.origin));
-    [[self.textField window] makeFirstResponder:self.textField];
+//    [[self.textField window] makeFirstResponder:self.textField];
 
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:1.0];
